@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+
+echo "<<<<<<starting >>>>>>"
+
+while read -r  LINE
+
+do
+ amass enum -passive  -d $LINE -config ../.config/amass/config.ini | tee -a $2
+
+done < $1
